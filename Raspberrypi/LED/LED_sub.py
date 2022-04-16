@@ -98,6 +98,7 @@ def current_time():
 def cds_control(select1,select2,nw_time):
 
     global auto_led_stop
+    global auto_led
 
     if(auto_led == 1):
         if(select2 > nw_time >= select1):  # (select2 > nw_time >= select1)
@@ -123,8 +124,8 @@ def cds_control(select1,select2,nw_time):
             if(auto_led_stop == 1):
                 auto_led_stop = 0
 
-    elif(auto_led==0):
-            led.value = 0
+    #elif(auto_led==0):
+    #        led.value = 0
     
     
 
@@ -168,6 +169,7 @@ try:
 
                     print(f"result2 = {val_2[1]}")
                     auto_led = int(val_2[2])
+                    print(auto_led)
 
                     # 첫 번째 설정 시간
                     select_hour1 = int(val_2[3])
