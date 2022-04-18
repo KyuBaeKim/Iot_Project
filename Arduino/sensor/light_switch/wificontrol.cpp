@@ -35,7 +35,7 @@ void reconnect(PubSubClient &client) {
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
       // Once connected, publish an announcement...
-      client.subscribe("Iot/door");
+      client.subscribe("Iot/light");
       //client.publish("data","init,water");
     } else {
       Serial.print("failed, rc=");
